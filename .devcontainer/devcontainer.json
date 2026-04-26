@@ -1,0 +1,23 @@
+{
+  "name": "Social Topology UI Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "containerUser": "vibecoder",
+  "remoteUser": "vibecoder",
+  "postCreateCommand": "sudo chown -R vibecoder /home/vibecoder /workspaces 2>/dev/null; (command -v opencode >/dev/null 2>&1 || curl -fsSL https://opencode.ai/install | bash); test -f package.json && npm install || true",
+  "forwardPorts": [5173],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "vue.volar",
+        "dbcode.dbcode",
+        "github.copilot-chat",
+        "github.copilot"
+      ]
+    }
+  }
+}
