@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-role-bridge: #f59e0b;
+  --color-role-mentor: #3b82f6;
+  --color-role-anchor: #10b981;
+  --color-role-catalyst: #f97316;
+  --color-role-observer: #94a3b8;
+  --color-role-drain: #ef4444;
+
+  --color-quality-nourishing: #22c55e;
+  --color-quality-neutral: #9ca3af;
+  --color-quality-draining: #ef4444;
+  --color-quality-conflicted: #eab308;
+  --color-quality-unknown: #6b7280;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  @apply bg-gray-950 text-gray-100 antialiased;
+  font-family: var(--font-sans);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
+
+/* Transition utilities */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.3s ease;
+}
+.slide-enter-from {
+  transform: translateX(100%);
+}
+.slide-leave-to {
+  transform: translateX(100%);
+}
